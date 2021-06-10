@@ -1,0 +1,122 @@
+name: example_experiment
+data:
+    data_path: ./data/
+    version: phoenix_2014_trans
+    sgn: sign 
+    txt: text
+    gls: gloss
+    train: phoenix14t.pami0.train
+    dev:   phoenix14t.pami0.dev
+    test:  phoenix14t.pami0.test
+    feature_size: 1024
+    level: word
+    txt_lowercase: true
+    max_sent_length: 400
+    random_train_subset: -1
+    random_dev_subset: -1
+    gls_vocab: ./data/gls.vocab
+    txt_vocab: ./data/txt.vocab
+    batch_size: 32
+testing:
+    translation_beam_sizes:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    translation_beam_alphas:
+    - -1
+    - 0
+    - 1
+    - 2
+training:
+   # load_model: "./SavedModels/example/13400.ckpt" 
+    reset_best_ckpt: true
+    reset_scheduler: true
+    reset_optimizer: true
+    random_seed: 42
+    model_dir:   "./SavedModels/example5" 
+    recognition_loss_weight: 0
+    translation_loss_weight: 1.0
+    kl_weight: 1
+    eval_metric: bleu
+    optimizer: adam
+    learning_rate: 0.001
+    batch_size: 32
+    eval_batch_size: 32
+    num_valid_log: 5
+    epochs: 500
+    early_stopping_metric: eval_metric
+    batch_type: sentence
+    translation_normalization: batch
+    eval_recognition_beam_size: 1
+    eval_translation_beam_size: 1
+    eval_translation_beam_alpha: 0
+    overwrite: true
+    shuffle: true
+    use_cuda: true
+    translation_max_output_length: 30
+    keep_last_ckpts: 1
+    batch_multiplier: 1
+    logging_freq: 20
+    validation_freq: 80
+    betas:
+    - 0.9
+    - 0.998
+    scheduling: plateau
+    learning_rate_min: 0.00001
+    patience: 5
+    decrease_factor: 0.8
+    label_smoothing: 0.0
+model:
+    gloss_input: false
+    initializer: xavier
+    bias_initializer: zeros
+    init_gain: 1.0
+    embed_initializer: xavier
+    embed_init_gain: 1.0
+    tied_softmax: false
+    simplified_inference: True
+    inference_sample_size: 4
+    encoder:
+        skip_encoder: false
+        type: transformer
+        bayesian_attention: true
+        bayesian_feedforward: true
+        ibp: false
+        activation: lwta
+        lwta_competitors: 4 
+        num_layers: 2
+        num_heads: 8
+        embeddings:
+            embedding_dim: 512
+            scale: false
+            bayesian: true
+            ibp: false
+            dropout: 0.2
+            norm_type: batch
+            activation_type: lwta
+            lwta_competitors: 4 
+        hidden_size: 512
+        ff_size: 2048
+        dropout: 0.2
+    decoder:
+        type: transformer
+        num_layers: 2
+        num_heads: 8
+        bayesian_attention: true
+        bayesian_feedforward: true
+        bayesian_output: true
+        ibp: false
+        activation: lwta
+        lwta_competitors: 4 
+        embeddings:
+            embedding_dim: 512
+            scale: False
+            bayesian: False
+            dropout: 0.2
+            norm_type: batch
+        hidden_size: 512
+        ff_size: 2048
+        dropout: 0.2
