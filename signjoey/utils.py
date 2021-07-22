@@ -43,7 +43,7 @@ def kl_divergence_normal(prior_mean, prior_scale, posterior_mean, posterior_scal
 	device = torch.device("cuda" if posterior_mean.is_cuda else "cpu")
 
 
-	prior_scale_normalized = F.softplus(torch.Tensor([prior_scale]).to(device),beta=10)
+	prior_scale_normalized = F.softplus(torch.Tensor([prior_scale],device=device),beta=10)
 	posterior_scale_normalized = F.softplus(posterior_scale,beta=10)
 
 	kl_loss = -0.5 + torch.log(prior_scale_normalized) - torch.log(posterior_scale_normalized) \
@@ -136,12 +136,12 @@ def concrete_sample(a, temperature, hard = False, eps = 1e-8, axis = -1,rand=Tru
 	"""
 
 	device = torch.device("cuda" if a.is_cuda else "cpu")
-
-	U = torch.rand(a.shape)
+	U = torch.rand(a.shape,device=device)
 	G = - torch.log(- torch.log(U + eps) + eps)
 	if rand==True:
 		a=a*1.0
-	t = (a + Variable(G).to(device)) / temperature
+
+	t = (a + Variable(G)) / temperature
 
 	y_soft = F.softmax(t, axis)
 
