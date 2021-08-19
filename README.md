@@ -1,6 +1,32 @@
 # Stochastic Transformer Networks with Linear Competing Units: Application to end-to-end SL Translation 
 
 
+Automating sign language translation (SLT) is a chal-
+lenging real-world application. Despite its societal impor-
+tance, though, research progress in the field remains rather
+poor. Crucially, existing methods that yield viable perfor-
+mance necessitate the availability of laborious to obtain
+gloss sequence groundtruth. In this paper, we attenuate
+this need, by introducing an end-to-end SLT model that does
+not entail explicit use of glosses; the model only needs text
+groundtruth. This is in stark contrast to existing end-to-
+end models that use gloss sequence groundtruth, either in
+the form of a modality that is recognized at an intermedi-
+ate model stage, or in the form of a parallel output process,
+jointly trained with the SLT model. Our approach consti-
+tutes a Transformer network with a novel type of layers that
+combines: (i) local winner-takes-all (LWTA) layers with
+stochastic winner sampling, instead of conventional ReLU
+layers, (ii) stochastic weights with posterior distributions
+estimated via variational inference, and (iii) a weight com-
+pression technique at inference time that exploits estimated
+posterior variance to perform massive, almost lossless com-
+pression. We demonstrate that our approach can reach the
+currently best reported BLEU-4 score on the PHOENIX
+2014T benchmark, but without making use of glosses for
+model training, and with a memory footprint reduced by
+more than 70%
+
 The code is based on:
 1. Sign Language Transformers: Joint End-to-end Sign Language Recognition and Translation.
 2. Joey NMT (https://github.com/joeynmt/joeynmt) 
