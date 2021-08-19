@@ -1,4 +1,4 @@
-#  Stochastic Transformer Networks with Linear Competing Units for End to End Sign Language Translation 
+# Stochastic Transformer Networks with Linear Competing Units: Application to end-to-end SL Translation 
 
 
 The code is based on:
