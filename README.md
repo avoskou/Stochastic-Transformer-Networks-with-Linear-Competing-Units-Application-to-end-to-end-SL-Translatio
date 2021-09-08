@@ -1,9 +1,9 @@
 # Stochastic Transformer Networks with Linear Competing Units: Application to end-to-end SL Translation 
 
 
-Automating sign language translation (SLT) is a chal-
-lenging real-world application. Despite its societal impor-
-tance, though, research progress in the field remains rather
+Automating sign language translation (SLT) is a challenging
+real-world application. Despite its societal impor-tance,
+though, research progress in the field remains rather
 poor. Crucially, existing methods that yield viable perfor-
 mance necessitate the availability of laborious to obtain
 gloss sequence groundtruth. In this paper, we attenuate
