@@ -61,4 +61,4 @@ Note that the default data directory is `./data`. If you download them to somewh
 
 
 ## Acknowledgement
-This  research  was  partially  supported  by  the  ResearchPromotion  Foundation  of  Cyprus,  through  the  grant:  INTERNATIONAL/USA/0118/0037  (Dimitrios  Kosmopoulos, Dimitris Metaxas), and the European Union’s Horizon2020 research and innovation program, under grant agree-ment  No  872139,  project  aiD  (Andreas  Voskou,  Sotirios Chatzis)
+This  research  was  partially  supported  by  the  ResearchPromotion  Foundation  of  Cyprus,  through  the  grant:  INTERNATIONAL/USA/0118/0037  (Dimitrios  Kosmopoulos, Dimitris Metaxas), and the European Union’s Horizon2020 research and innovation program, under grant agreement  No  872139,  project  aiD  (Andreas  Voskou,  Sotirios Chatzis)
