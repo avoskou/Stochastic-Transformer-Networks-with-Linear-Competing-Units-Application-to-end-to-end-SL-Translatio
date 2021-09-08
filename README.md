@@ -59,3 +59,6 @@ To test  an excisting model:
 Note that the default data directory is `./data`. If you download them to somewhere else, you need to update the `data_path` parameters in your config file.
 
 
+
+## Acknowledgement
+This  research  was  partially  supported  by  the  ResearchPromotion  Foundation  of  Cyprus,  through  the  grant:  INTERNATIONAL/USA/0118/0037  (Dimitrios  Kosmopoulos, Dimitris Metaxas), and the European Union’s Horizon2020 research and innovation program, under grant agree-ment  No  872139,  project  aiD  (Andreas  Voskou,  Sotirios Chatzis)
