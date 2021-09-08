@@ -2,10 +2,10 @@
 
 
 Automating sign language translation (SLT) is a challenging
-real-world application. Despite its societal impor-tance,
+real-world application. Despite its societal importance,
 though, research progress in the field remains rather
-poor. Crucially, existing methods that yield viable perfor-
-mance necessitate the availability of laborious to obtain
+poor. Crucially, existing methods that yield viable performance
+necessitate the availability of laborious to obtain
 gloss sequence groundtruth. In this paper, we attenuate
 this need, by introducing an end-to-end SLT model that does
 not entail explicit use of glosses; the model only needs text
@@ -13,8 +13,8 @@ groundtruth. This is in stark contrast to existing end-to-
 end models that use gloss sequence groundtruth, either in
 the form of a modality that is recognized at an intermedi-
 ate model stage, or in the form of a parallel output process,
-jointly trained with the SLT model. Our approach consti-
-tutes a Transformer network with a novel type of layers that
+jointly trained with the SLT model. Our approach constitutes
+a Transformer network with a novel type of layers that
 combines: (i) local winner-takes-all (LWTA) layers with
 stochastic winner sampling, instead of conventional ReLU
 layers, (ii) stochastic weights with posterior distributions
