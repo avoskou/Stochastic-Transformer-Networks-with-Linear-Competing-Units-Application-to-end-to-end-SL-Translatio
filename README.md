@@ -1,4 +1,4 @@
-# Stochastic Transformer Networks with Linear Competing Units: Application to end-to-end SL Translation 
+# Stochastic Transformer Networks with Linear Competing Units: Application to end-to-end Sign Language Translation 
 
 
 Automating sign language translation (SLT) is a challenging
@@ -32,6 +32,20 @@ The code is based on:
 2. Joey NMT (https://github.com/joeynmt/joeynmt) 
 3. Nonparametric Bayesian Deep Networks with Local Competition
 4. Bayesian Compression for Deep Learning
+
+
+## Reference
+
+Please cite :
+
+@inproceedings{voskou2021stochastic,
+  title={Stochastic transformer networks with linear competing units: Application to end-to-end sl translation},
+  author={Voskou, Andreas and Panousis, Konstantinos P and Kosmopoulos, Dimitrios and Metaxas, Dimitris N and Chatzis, Sotirios},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  pages={11946--11955},
+  year={2021}
+}
+
 
 ## Requirements
 * python 3.6+
